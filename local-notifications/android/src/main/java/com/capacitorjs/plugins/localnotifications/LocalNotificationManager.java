@@ -171,7 +171,11 @@ public class LocalNotificationManager {
             .setAutoCancel(localNotification.isAutoCancel())
             .setOngoing(localNotification.isOngoing())
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setGroupSummary(localNotification.isGroupSummary());
+            .setGroupSummary(localNotification.isGroupSummary())
+            .setProgress(
+                    localNotification.getProgressMaxValue(),
+                    localNotification.getProgressValue(),
+                    localNotification.getIsIndeterminateProgress());
 
         if (localNotification.getLargeBody() != null) {
             // support multiline text

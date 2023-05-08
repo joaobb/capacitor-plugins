@@ -25,6 +25,7 @@ public class LocalNotification {
     private String body;
     private String largeBody;
     private String summaryText;
+    private LocalNotificationProgress progressBar;
     private Integer id;
     private String sound;
     private String smallIcon;
@@ -72,6 +73,18 @@ public class LocalNotification {
 
     public String getSummaryText() {
         return this.summaryText;
+    }
+
+    public Number getProgressValue() {
+        return this.progressBar.value;
+    }
+
+    public Number getProgressMaxValue() {
+        return this.progressBar.maxValue;
+    }
+
+    public boolean getIsIndeterminateProgress() {
+        return this.progressBar.indeterminate;
     }
 
     public LocalNotificationSchedule getSchedule() {
